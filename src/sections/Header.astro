@@ -1,14 +1,23 @@
 ---
-import ClockIcon from "../icons/ClockIcon.astro";
-import HambuguerMenuIcon from "../icons/HambuguerMenuIcon.astro";
-import MailIcon from "../icons/MailIcon.astro";
-import NextArrowIcon from "../icons/NextArrowIcon.astro";
 import PhoneIcon from "../icons/PhoneIcon.astro";
-import PreviewArrowIcon from "../icons/PreviewArrowIcon.astro";
-import PreviousArrow from "../icons/PreviousArrow.astro";
+import MailIcon from "../icons/MailIcon.astro";
+import ClockIcon from "../icons/ClockIcon.astro";
+import NextArrowIcon from "../icons/NextArrowIcon.astro";
+import HambuguerMenuIcon from "../icons/HambuguerMenuIcon.astro";
+import CloseMenuIcon from "../icons/CloseMenuIcon.astro";
+
+const navItems = [
+  { label: "Inicio", href: "#inicio" },
+  { label: "Sobre Nosotros", href: "#sobre-nosotros" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Trabajos", href: "#trabajos" },
+  { label: "Opiniones", href: "#opiniones" },
+  { label: "Contacto", href: "#contacto" },
+];
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 pb-4">
+  <!-- TOP BAR -->
   <div class="bg-[#151515] py-2 px-4 md:px-8">
     <div
       class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-0"
@@ -36,167 +45,164 @@ import PreviousArrow from "../icons/PreviousArrow.astro";
   </div>
 
   <!-- NAVBAR -->
-  <nav
-    class="transition-all duration-300 bg-[#1A1A1A]/95 backdrop-blur-md shadow-lg shadow-black/30"
-  >
+  <nav id="main-nav" class="bg-[#1A1A1A]/95 transition-all duration-300">
     <div
       class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20"
     >
-      <a href="#inicio" class="flex items-center gap-3 cursor-pointer"
-        ><img
+      <!-- Logo -->
+      <a href="#inicio" class="flex items-center gap-3 cursor-pointer nav-link">
+        <img
           alt="Pulimentos Ruiz logo pulido acristalado suelos Sevilla"
           class="h-10 md:h-12 w-auto rounded-md object-contain"
           src="assets/logos/logo.jpeg"
-        /><span
+        />
+        <span
           class="text-white font-semibold text-base md:text-lg hidden sm:block"
-          >Pulimentos <span class="text-[#D4AF37]">Ruiz</span></span
-        ></a
-      ><ul class="hidden lg:flex items-center gap-6 xl:gap-8">
-        <li>
-          <button
-            class="text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#D4AF37] border-[#D4AF37]"
-            >Inicio</button
-          >
-        </li><li>
-          <button
-            class="text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#E0E0E0] border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37]"
-            >Sobre Nosotros</button
-          >
-        </li><li>
-          <button
-            class="text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#E0E0E0] border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37]"
-            >Servicios</button
-          >
-        </li><li>
-          <button
-            class="text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#E0E0E0] border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37]"
-            >Trabajos</button
-          >
-        </li><li>
-          <button
-            class="text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#E0E0E0] border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37]"
-            >Opiniones</button
-          >
-        </li><li>
-          <button
-            class="text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#E0E0E0] border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37]"
-            >Contacto</button
-          >
-        </li>
-      </ul><div class="flex items-center gap-3">
-        <button
-          class="hidden md:flex items-center gap-2 bg-linear-to-r from-[#D4AF37] to-[#B8960F] text-white text-xs xl:text-sm font-semibold px-4 xl:px-6 py-2.5 rounded-full whitespace-nowrap hover:scale-105 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-200 cursor-pointer"
-          >Solicita presupuesto gratis<span
-            class="w-4 h-4 flex items-center justify-center"
-          >
-            <NextArrowIcon />
-          </span></button
-        ><button
-          class="lg:hidden w-10 h-10 flex items-center justify-center text-[#D4AF37] cursor-pointer"
-          aria-label="Abrir menú"><i class="text-2xl ri-menu-line"></i></button
         >
+          Pulimentos <span class="text-[#D4AF37]">Ruiz</span>
+        </span>
+      </a>
+
+      <!-- Desktop menu -->
+      <ul class="hidden xl:flex items-center gap-6 xl:gap-8">
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                data-section={item.href.replace("#", "")}
+                class="nav-link text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#E0E0E0] border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37]"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- CTA + hamburger -->
+      <div class="flex items-center gap-3">
+        <a
+          href="#contacto"
+          class="nav-link hidden xl:flex items-center gap-2 bg-linear-to-r from-[#D4AF37] to-[#B8960F] text-white text-xs xl:text-sm font-semibold px-4 xl:px-6 py-2.5 rounded-full whitespace-nowrap hover:scale-105 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-200 cursor-pointer"
+        >
+          Solicita presupuesto gratis
+          <span class="w-4 h-4 flex items-center justify-center">
+            <NextArrowIcon />
+          </span>
+        </a>
+        <button
+          id="menu-toggle-btn"
+          class="xl:hidden w-10 h-10 flex items-center justify-center text-[#D4AF37] cursor-pointer"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <!-- Hamburger icon -->
+          <HambuguerMenuIcon />
+          <!-- Close icon (hidden by default) -->
+          <CloseMenuIcon />
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div
+      id="mobile-menu"
+      class="xl:hidden hidden bg-[#1A1A1A]/98 backdrop-blur-md border-t border-[#D4AF37]/20"
+    >
+      <ul class="flex flex-col py-4">
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                data-section={item.href.replace("#", "")}
+                class="nav-link mobile-nav-link w-full text-left px-6 py-3 text-[#E0E0E0] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 text-sm font-medium transition-colors cursor-pointer block"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li class="px-6 pt-3 pb-2">
+          <a
+            href="#contacto"
+            class="nav-link mobile-nav-link block w-full text-center bg-linear-to-r from-[#D4AF37] to-[#B8960F] text-white text-sm font-semibold py-3 rounded-full cursor-pointer"
+          >
+            Solicita presupuesto gratis
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
 </header>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.getElementById(
-      "menu-toggle-btn",
-    ) as HTMLButtonElement | null;
-    const navbarItem = document.getElementById(
-      "navbar-default",
-    ) as HTMLDivElement | null;
-    const navLinks = document.querySelectorAll("#navbar-default a");
+  const nav = document.getElementById("main-nav")!;
+  const toggleBtn = document.getElementById("menu-toggle-btn")!;
+  const mobileMenu = document.getElementById("mobile-menu")!;
+  const iconOpen = document.getElementById("icon-open")!;
+  const iconClose = document.getElementById("icon-close")!;
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>(".nav-link");
+  const desktopLinks =
+    document.querySelectorAll<HTMLAnchorElement>("[data-section]");
 
-    let isMenuOpen = false;
+  // --- Scroll: background + active section ---
+  function onScroll() {
+    // Active section highlight
+    const sections = [
+      "inicio",
+      "sobre-nosotros",
+      "servicios",
+      "trabajos",
+      "opiniones",
+      "contacto",
+    ];
+    let current = "inicio";
 
-    const toggleMenu = () => {
-      isMenuOpen = !isMenuOpen;
-      if (toggleButton) {
-        toggleButton.setAttribute("aria-expanded", isMenuOpen.toString());
+    for (const id of sections) {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 120) {
+        current = id;
       }
-      if (navbarItem) {
-        if (isMenuOpen) {
-          navbarItem.classList.remove("max-h-0", "opacity-0");
-          navbarItem.classList.add("max-h-150", "opacity-100");
-        } else {
-          navbarItem.classList.remove("max-h-150", "opacity-100");
-          navbarItem.classList.add("max-h-0", "opacity-0");
-        }
-      }
-    };
-
-    if (toggleButton) {
-      toggleButton.addEventListener("click", toggleMenu);
     }
 
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth < 1024 && isMenuOpen) {
-          toggleMenu();
-        }
-      });
+    desktopLinks.forEach((link) => {
+      const isActive = link.dataset.section === current;
+      link.classList.toggle("text-[#D4AF37]", isActive);
+      link.classList.toggle("border-[#D4AF37]", isActive);
+      link.classList.toggle("text-[#E0E0E0]", !isActive);
+      link.classList.toggle("border-transparent", !isActive);
     });
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll(); // Run on load
+
+  // --- Hamburger toggle ---
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = !mobileMenu.classList.contains("hidden");
+    mobileMenu.classList.toggle("hidden", isOpen);
+    iconOpen.classList.toggle("hidden", !isOpen);
+    iconClose.classList.toggle("hidden", isOpen);
+    toggleBtn.setAttribute("aria-expanded", String(!isOpen));
   });
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
-    const navItems = document.querySelectorAll("header nav ul a");
+  // --- Smooth scroll + close mobile menu on link click ---
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      if (!href?.startsWith("#")) return;
 
-    const callback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") === entry.target.id) {
-              item.classList.add("nav-link-selected");
-            } else {
-              item.classList.remove("nav-link-selected");
-            }
-          });
-        }
-      });
-    };
+      e.preventDefault();
+      const target = document.getElementById(href.replace("#", ""));
+      if (target) target.scrollIntoView({ behavior: "smooth" });
 
-    const observer = new IntersectionObserver(callback, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
+      // Close mobile menu if open
+      mobileMenu.classList.add("hidden");
+      iconOpen.classList.remove("hidden");
+      iconClose.classList.add("hidden");
+      toggleBtn.setAttribute("aria-expanded", "false");
     });
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect();
-      } else {
-        sections.forEach((section) => {
-          observer.observe(section);
-        });
-      }
-    };
   });
 </script>
-
-<style>
-  .nav-link {
-    color: white;
-    transition: color 0.2s ease;
-  }
-
-  .nav-link:hover {
-    color: #15b1ff;
-  }
-
-  .nav-link-selected {
-    color: #15b1ff;
-  }
-
-  .nav-link-selected[aria-label="contacto"] {
-    background-color: #f39615;
-    color: white;
-  }
-</style>
