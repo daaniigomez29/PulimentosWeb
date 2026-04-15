@@ -9,7 +9,7 @@ import StarIcon from "../../icons/StarIcon.astro";
 // Hero component for gobe-studio
 ---
 
-<section
+<div
   id="inicio"
   class="relative min-h-screen flex flex-col justify-center overflow-hidden"
 >
@@ -31,9 +31,7 @@ import StarIcon from "../../icons/StarIcon.astro";
       <div
         class="inline-flex items-center gap-2 border border-[#D4AF37]/60 bg-[#D4AF37]/10 rounded-full px-4 py-2 mb-6"
       >
-        <span class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
-          ><i class="ri-award-fill text-sm"></i></span
-        ><span class="text-[#D4AF37] text-xs font-medium tracking-wide"
+        <span class="text-[#D4AF37] text-xs font-medium tracking-wide"
           >Líderes en Sevilla desde 1998</span
         >
       </div><h1
@@ -59,7 +57,8 @@ import StarIcon from "../../icons/StarIcon.astro";
             <ImgIcon />
           </span>Ver nuestros trabajos</button
         >
-      </div><div
+      </div>
+      <div
         class="inline-flex flex-col sm:flex-row items-center gap-0 bg-[#1A1A1A]/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-[#D4AF37]/20"
       >
         <div class="flex items-center gap-4 px-8 py-5">
@@ -89,7 +88,7 @@ import StarIcon from "../../icons/StarIcon.astro";
       </div>
     </div>
   </div><div
-    class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce"
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 animate-bounce hidden sm:flex"
   >
     <span class="text-[#D4AF37]/60 text-xs">Descubre más</span><span
       class="w-5 h-5 flex items-center justify-center text-[#D4AF37]/60"
@@ -97,4 +96,4 @@ import StarIcon from "../../icons/StarIcon.astro";
       <ArrowDownIcon />
     </span>
   </div>
-</section>
+</div>
