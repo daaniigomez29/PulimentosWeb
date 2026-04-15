@@ -4,6 +4,7 @@ import MailIcon from "../icons/MailIcon.astro";
 import ClockIcon from "../icons/ClockIcon.astro";
 import NextArrowIcon from "../icons/NextArrowIcon.astro";
 import HambuguerMenuIcon from "../icons/HambuguerMenuIcon.astro";
+import CloseMenuIcon from "../icons/CloseMenuIcon.astro";
 
 const navItems = [
   { label: "Inicio", href: "#inicio" },
@@ -63,7 +64,7 @@ const navItems = [
       </a>
 
       <!-- Desktop menu -->
-      <ul class="hidden lg:flex items-center gap-6 xl:gap-8">
+      <ul class="hidden xl:flex items-center gap-6 xl:gap-8">
         {
           navItems.map((item) => (
             <li>
@@ -83,7 +84,7 @@ const navItems = [
       <div class="flex items-center gap-3">
         <a
           href="#contacto"
-          class="nav-link hidden md:flex items-center gap-2 bg-linear-to-r from-[#D4AF37] to-[#B8960F] text-white text-xs xl:text-sm font-semibold px-4 xl:px-6 py-2.5 rounded-full whitespace-nowrap hover:scale-105 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-200 cursor-pointer"
+          class="nav-link hidden xl:flex items-center gap-2 bg-linear-to-r from-[#D4AF37] to-[#B8960F] text-white text-xs xl:text-sm font-semibold px-4 xl:px-6 py-2.5 rounded-full whitespace-nowrap hover:scale-105 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-200 cursor-pointer"
         >
           Solicita presupuesto gratis
           <span class="w-4 h-4 flex items-center justify-center">
@@ -92,40 +93,14 @@ const navItems = [
         </a>
         <button
           id="menu-toggle-btn"
-          class="lg:hidden w-10 h-10 flex items-center justify-center text-[#D4AF37] cursor-pointer"
+          class="xl:hidden w-10 h-10 flex items-center justify-center text-[#D4AF37] cursor-pointer"
           aria-label="Abrir menú"
           aria-expanded="false"
         >
           <!-- Hamburger icon -->
-          <svg
-            id="icon-open"
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
+          <HambuguerMenuIcon />
           <!-- Close icon (hidden by default) -->
-          <svg
-            id="icon-close"
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6 hidden"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
+          <CloseMenuIcon />
         </button>
       </div>
     </div>
@@ -133,7 +108,7 @@ const navItems = [
     <!-- Mobile menu -->
     <div
       id="mobile-menu"
-      class="lg:hidden hidden bg-[#1A1A1A]/98 backdrop-blur-md border-t border-[#D4AF37]/20"
+      class="xl:hidden hidden bg-[#1A1A1A]/98 backdrop-blur-md border-t border-[#D4AF37]/20"
     >
       <ul class="flex flex-col py-4">
         {
