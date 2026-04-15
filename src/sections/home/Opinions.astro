@@ -1,212 +1,233 @@
 ---
 import TestimonialCard from "../../components/TestimonialCard.astro";
+import GoogleIcon from "../../icons/GoogleIcon.astro";
 import NextArrowIcon from "../../icons/NextArrowIcon.astro";
 import PreviousArrow from "../../icons/PreviousArrow.astro";
+import StarIcon from "../../icons/StarIcon.astro";
 ---
 
-<section
-    id="opiniones-clientes"
-    class="bg-[#0b0b0b] py-24 lg:py-30 overflow-hidden relative border-t border-slate-800/30"
->
-    <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
-        <div
-            class="reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out flex flex-col items-start text-left max-w-4xl mb-12"
-        >
+<section id="opiniones" class="bg-[#1E1E1E] py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <div class="text-center mb-12">
             <p
-                class="text-[#15b1ff] text-[11px]! font-bold tracking-[0.2em] uppercase mb-4"
+                class="text-[#D4AF37] text-xs! font-semibold tracking-widest uppercase mb-3"
             >
                 Testimonios
-            </p>
-            <h2
-                class="text-3xl lg:text-5xl font-light text-white tracking-tight leading-tight mb-6"
+            </p><h2
+                class="text-3xl! md:text-4xl! xl:text-5xl! font-bold text-white leading-tight mb-6"
             >
-                Clientes que ya confiaron en <span class="font-bold"
-                    >Gobe Studio</span
+                Lo que dicen <span class="text-[#D4AF37]"
+                    >nuestros clientes</span
                 >
-            </h2>
-            <p
-                class="text-slate-400 font-light text-sm sm:text-base leading-relaxed"
+            </h2><a
+                href="https://www.google.com/search?q=Pulimentos+Ruiz+Sevilla"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                class="inline-flex items-center gap-3 bg-white rounded-full px-5 py-2.5 hover:scale-105 transition-transform cursor-pointer"
+                ><span class="w-5 h-5 flex items-center justify-center">
+                    <GoogleIcon />
+                </span><div class="flex gap-0.5">
+                    <span
+                        class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                    >
+                        <StarIcon />
+                    </span><span
+                        class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                        ><StarIcon /></span
+                    ><span
+                        class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                        ><StarIcon /></span
+                    ><span
+                        class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                        ><StarIcon /></span
+                    ><span
+                        class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                        ><StarIcon /></span
+                    >
+                </div><span class="text-[#333] font-semibold text-sm"
+                    >4.9/5 en Google Reviews</span
+                ></a
             >
-                Negocios que necesitaban una web profesional para mejorar su
-                presencia online y empezar a captar clientes desde internet.
-            </p>
-        </div>
-
-        <!-- Divider line -->
-        <div class="w-full h-px bg-[#15b1ff]/10 mb-16"></div>
-
-        <!-- Carousel Container -->
-        <div
-            class="relative w-full max-w-5xl mx-auto testimonial-slider reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-200 px-12 sm:px-16"
+        </div><div
+            class="grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-700 opacity-100 translate-y-0"
         >
-            <div class="overflow-hidden relative">
-                <div
-                    class="flex transition-transform duration-500 ease-in-out"
-                    id="testimonial-track"
+            <div
+                class="rounded-2xl p-6 md:p-8 hover:scale-[1.02] transition-all duration-300 bg-[#161616]"
+            >
+                <div class="flex items-start gap-4">
+                    <img
+                        alt="María García - cliente de Pulimentos Ruiz Sevilla"
+                        class="w-14 h-14 rounded-full object-cover object-top border-2 border-[#D4AF37] shrink-0"
+                        loading="lazy"
+                        src="https://readdy.ai/api/search-image?query=professional%20woman%20portrait%20smiling%20friendly%20face%20neutral%20background%20Spain%2040%20years%20old&width=80&height=80&seq=avatar-01&orientation=squarish"
+                    /><div class="flex-1">
+                        <p class="text-white font-semibold text-base">
+                            María García
+                        </p><p class="text-[#B0B0B0] text-xs mb-2">
+                            Propietaria de vivienda, Triana
+                        </p><div class="flex gap-0.5">
+                            <span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            >
+                        </div>
+                    </div><span
+                        class="text-[#D4AF37]/30 font-serif text-5xl leading-none shrink-0 ml-auto"
+                        >“</span
+                    >
+                </div><p
+                    class="text-[#C5C5C5] text-sm leading-relaxed mt-4 italic"
                 >
-                    <!-- Slide 1 -->
-                    <TestimonialCard
-                        text="Buscábamos una web sencilla pero profesional para dar a conocer nuestros servicios. Daniel entendió perfectamente lo que necesitábamos y organizó todo de forma clara. Ahora tenemos una página moderna que transmite confianza y nos representa mucho mejor."
-                        company="Instalaciones Eléctricas Jesús Gómez"
-                        profession="Electricista"
-                        initial="logo_jesus_trans"
-                    />
-
-                    <!-- Slide 2 -->
-                    <TestimonialCard
-                        text="Necesitábamos una web nueva y desde el principio todo fue muy fácil. El trato fue cercano y el enfoque estuvo siempre en mejorar la presencia online y generar más contactos para el negocio."
-                        company="Conforzone Eficiencias"
-                        profession="Climatización"
-                        initial="logo_conforzone"
-                    />
-                </div>
-            </div>
-
-            <!-- Controls -->
-            <button
-                id="prev-testimonial"
-                class="absolute left-0 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors p-2 z-10"
-                aria-label="Testimonio anterior"
+                    Increíble resultado. Tenía el suelo de mármol completamente
+                    opaco y lleno de rayaduras. Después del pulido y acristalado
+                    parece nuevo. El equipo fue muy profesional, puntual y
+                    dejaron todo limpio. 100% recomendable.
+                </p>
+            </div><div
+                class="rounded-2xl p-6 md:p-8 hover:scale-[1.02] transition-all duration-300 bg-transparent border-2 border-[#D4AF37]/30"
             >
-                <PreviousArrow />
-            </button>
-            <button
-                id="next-testimonial"
-                class="absolute right-0 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors p-2 z-10"
-                aria-label="Siguiente testimonio"
+                <div class="flex items-start gap-4 flex-row-reverse">
+                    <img
+                        alt="Carlos Rodríguez - cliente de Pulimentos Ruiz Sevilla"
+                        class="w-14 h-14 rounded-full object-cover object-top border-2 border-[#D4AF37] shrink-0"
+                        loading="lazy"
+                        src="https://readdy.ai/api/search-image?query=professional%20man%20portrait%20smiling%20friendly%20face%20neutral%20background%20Spain%2055%20years%20old&width=80&height=80&seq=avatar-02&orientation=squarish"
+                    /><div class="flex-1 text-right">
+                        <p class="text-white font-semibold text-base">
+                            Carlos Rodríguez
+                        </p><p class="text-[#B0B0B0] text-xs mb-2">
+                            Presidente comunidad, Los Remedios
+                        </p><div class="flex gap-0.5">
+                            <span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            >
+                        </div>
+                    </div><span
+                        class="text-[#D4AF37]/30 font-serif text-5xl leading-none shrink-0 mr-auto"
+                        >“</span
+                    >
+                </div><p
+                    class="text-[#C5C5C5] text-sm leading-relaxed mt-4 italic"
+                >
+                    Contratamos a Pulimentos Ruiz para restaurar el terrazo de
+                    toda la comunidad. El resultado fue espectacular. Precio
+                    justo, trabajo impecable y en el plazo acordado. Los vecinos
+                    están encantados.
+                </p>
+            </div><div
+                class="rounded-2xl p-6 md:p-8 hover:scale-[1.02] transition-all duration-300 bg-[#161616]"
             >
-                <NextArrowIcon />
-            </button>
-
-            <!-- Dots -->
-            <div class="flex justify-center gap-2 mt-16" id="testimonial-dots">
-                <button
-                    class="w-1.5 h-1.5 rounded-full bg-slate-500 transition-colors testimonial-dot active"
-                    aria-label="Ir al testimonio 1"></button>
-                <button
-                    class="w-1.5 h-1.5 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors testimonial-dot"
-                    aria-label="Ir al testimonio 2"></button>
+                <div class="flex items-start gap-4">
+                    <img
+                        alt="Ana Martínez - cliente de Pulimentos Ruiz Sevilla"
+                        class="w-14 h-14 rounded-full object-cover object-top border-2 border-[#D4AF37] shrink-0"
+                        loading="lazy"
+                        src="https://readdy.ai/api/search-image?query=professional%20woman%20portrait%20smiling%20confident%20face%20neutral%20background%20Spain%2045%20years%20old&width=80&height=80&seq=avatar-03&orientation=squarish"
+                    /><div class="flex-1">
+                        <p class="text-white font-semibold text-base">
+                            Ana Martínez
+                        </p><p class="text-[#B0B0B0] text-xs mb-2">
+                            Directora de hotel, Centro Sevilla
+                        </p><div class="flex gap-0.5">
+                            <span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            >
+                        </div>
+                    </div><span
+                        class="text-[#D4AF37]/30 font-serif text-5xl leading-none shrink-0 ml-auto"
+                        >“</span
+                    >
+                </div><p
+                    class="text-[#C5C5C5] text-sm leading-relaxed mt-4 italic"
+                >
+                    Llevamos 3 años trabajando con ellos para el mantenimiento
+                    de los suelos del hotel. Siempre disponibles, siempre con el
+                    mismo nivel de calidad. Son nuestros proveedores de
+                    confianza para el pulido de suelos en Sevilla.
+                </p>
+            </div><div
+                class="rounded-2xl p-6 md:p-8 hover:scale-[1.02] transition-all duration-300 bg-transparent border-2 border-[#D4AF37]/30"
+            >
+                <div class="flex items-start gap-4 flex-row-reverse">
+                    <img
+                        alt="José Luis Fernández - cliente de Pulimentos Ruiz Sevilla"
+                        class="w-14 h-14 rounded-full object-cover object-top border-2 border-[#D4AF37] shrink-0"
+                        loading="lazy"
+                        src="https://readdy.ai/api/search-image?query=professional%20man%20portrait%20smiling%20business%20face%20neutral%20background%20Spain%2050%20years%20old&width=80&height=80&seq=avatar-04&orientation=squarish"
+                    /><div class="flex-1 text-right">
+                        <p class="text-white font-semibold text-base">
+                            José Luis Fernández
+                        </p><p class="text-[#B0B0B0] text-xs mb-2">
+                            Promotor inmobiliario, Sevilla
+                        </p><div class="flex gap-0.5">
+                            <span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37]"
+                                ><i class="ri-star-fill text-sm"></i></span
+                            >
+                        </div>
+                    </div><span
+                        class="text-[#D4AF37]/30 font-serif text-5xl leading-none shrink-0 mr-auto"
+                        >“</span
+                    >
+                </div><p
+                    class="text-[#C5C5C5] text-sm leading-relaxed mt-4 italic"
+                >
+                    Los contraté para una rehabilitación completa de suelos de
+                    piedra natural en un edificio histórico. Trabajo delicado y
+                    exigente que resolvieron con total profesionalidad. El
+                    resultado superó mis expectativas.
+                </p>
             </div>
         </div>
     </div>
 </section>
-
-<script>
-    function initTestimonialSlider() {
-        const track = document.getElementById("testimonial-track");
-        const prevBtn = document.getElementById("prev-testimonial");
-        const nextBtn = document.getElementById("next-testimonial");
-        const dots = document.querySelectorAll(".testimonial-dot");
-
-        if (!track) return;
-
-        let currentIndex = 0;
-        const totalSlides = track.children.length;
-
-        // Auto-playing logic could go here
-        let autoplayInterval: number | undefined;
-
-        function startAutoplay() {
-            autoplayInterval = setInterval(() => {
-                if (totalSlides > 1 && window.innerWidth >= 768) {
-                    currentIndex = (currentIndex + 1) % totalSlides;
-                    updateSlider();
-                }
-            }, 5000); // Change slide every 5s
-        }
-
-        function stopAutoplay() {
-            clearInterval(autoplayInterval);
-        }
-
-        function updateSlider() {
-            track!.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-            dots.forEach((dot, index) => {
-                if (index === currentIndex) {
-                    dot.classList.remove("bg-slate-800", "bg-slate-700");
-                    dot.classList.add("bg-slate-500");
-                } else {
-                    dot.classList.remove("bg-slate-500");
-                    dot.classList.add("bg-slate-800");
-                }
-            });
-        }
-
-        if (prevBtn) {
-            prevBtn.addEventListener("click", () => {
-                if (totalSlides <= 1) return;
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                updateSlider();
-                stopAutoplay(); // Stop auto-change on user interaction
-                startAutoplay(); // Restart interval
-            });
-        }
-
-        if (nextBtn) {
-            nextBtn.addEventListener("click", () => {
-                if (totalSlides <= 1) return;
-                currentIndex = (currentIndex + 1) % totalSlides;
-                updateSlider();
-                stopAutoplay();
-                startAutoplay();
-            });
-        }
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener("click", () => {
-                if (index >= totalSlides) return;
-                currentIndex = index;
-                updateSlider();
-                stopAutoplay();
-                startAutoplay();
-            });
-        });
-
-        // Touch events for mobile swipe
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        track.addEventListener(
-            "touchstart",
-            (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-                stopAutoplay();
-            },
-            { passive: true },
-        );
-
-        track.addEventListener(
-            "touchend",
-            (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-                startAutoplay();
-            },
-            { passive: true },
-        );
-
-        function handleSwipe() {
-            const difference = touchStartX - touchEndX;
-            const minSwipeDistance = 50;
-
-            if (Math.abs(difference) > minSwipeDistance) {
-                if (difference > 0) {
-                    // Swipe left -> next slide
-                    currentIndex = (currentIndex + 1) % totalSlides;
-                } else {
-                    // Swipe right -> prev slide
-                    currentIndex =
-                        (currentIndex - 1 + totalSlides) % totalSlides;
-                }
-                updateSlider();
-            }
-        }
-
-        startAutoplay();
-    }
-
-    // Handle initialization properly
-    initTestimonialSlider();
-    document.addEventListener("astro:page-load", initTestimonialSlider);
-</script>
