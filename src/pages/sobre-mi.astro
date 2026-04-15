@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AboutMe from "../sections/about-me/AboutMe.astro";
+import Approach from "../sections/about-me/Approach.astro";
+import FaqAboutMe from "../sections/about-me/FaqAboutMe.astro";
+import HowWork from "../sections/about-me/HowWork.astro";
+import NextStep from "../sections/about-me/NextStep.astro";
+---
+
+<Layout
+    title="Sobre mí | Gobe Studio"
+    description="Conoce a Daniel Gómez Benítez, desarrollador web especializado en soluciones modernas y eficientes. Descubre mi enfoque, metodología de trabajo y cómo puedo ayudarte a transformar tus ideas en proyectos digitales de alto impacto."
+>
+    <main>
+        <AboutMe />
+        <Approach />
+        <HowWork />
+        <FaqAboutMe />
+        <NextStep />
+    </main>
+</Layout>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("opacity-100", "translate-y-0");
+                entry.target.classList.remove("opacity-0", "translate-y-10");
+            }
+        });
+    });
+
+    const observer2 = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("opacity-100", "translate-x-0");
+                entry.target.classList.remove("opacity-0", "translate-x-20");
+            }
+        });
+    });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    document
+        .querySelectorAll(".reveal-2")
+        .forEach((el) => observer2.observe(el));
+</script>

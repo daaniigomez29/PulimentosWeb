@@ -1,0 +1,91 @@
+---
+import ServiceCard from "../../components/ServiceCard.astro";
+
+const services = [
+    {
+        title: "Micropulido y Acristalado en Sevilla",
+        description:
+            "Técnica ideal para desgaste leve. Elimina rayaduras y manchas superficiales con acabado espejo.",
+        features: [
+            "Diseño alineado con tu marca",
+            "Páginas clave (inicio, servicios, contacto…)",
+            "SEO técnico",
+            "Headless CMS integrado",
+            "Soporte 1 año",
+        ],
+        cta: "Solicitar este servicio",
+        highlighted: false,
+        img: "https://readdy.ai/api/search-image?query=micro%20polishing%20marble%20floor%20close%20up%20professional%20technique%20Seville%20Spain%20shiny%20surface%20restoration%20light%20scratches%20removal%20elegant%20interior%20bright%20result&width=600&height=400&seq=service-img-01&orientation=landscape",
+    },
+    {
+        title: "Pulido y Acristalado en Sevilla",
+        description:
+            "Para mayor desgaste, pérdida de brillo o manchas profundas. Restaura la planimetría y el brillo original.",
+        features: [
+            "Diseño personalizado enfocado en conversión",
+            "Estructura clara y estratégica",
+            "SEO técnico",
+            "Headless CMS integrado",
+            "Pautas para mejorar durante el primer año.",
+        ],
+        cta: "Solicitar este servicio",
+        highlighted: false,
+        img: "https://readdy.ai/api/search-image?query=professional%20floor%20polishing%20machine%20marble%20stone%20Seville%20Spain%20industrial%20equipment%20worker%20restoration%20hotel%20lobby%20community%20building%20bright%20shiny%20result&width=600&height=400&seq=service-img-02&orientation=landscape",
+    },
+    {
+        title: "Pulido y Acristalado de Suelos en Sevilla",
+        description:
+            "Restauración integral de suelos muy deteriorados con maquinaria industrial y productos profesionales.",
+        features: [
+            "Análisis de la web actual",
+            "Mejora de estructura y diseño",
+            "Optimización de rendimiento",
+            "SEO técnico",
+            "Enfoque en conversión",
+        ],
+        cta: "Solicitar este servicio",
+        highlighted: false,
+        img: "https://readdy.ai/api/search-image?query=professional%20floor%20polishing%20machine%20marble%20stone%20Seville%20Spain%20industrial%20equipment%20worker%20restoration%20hotel%20lobby%20community%20building%20bright%20shiny%20result&width=600&height=400&seq=service-img-03&orientation=landscape",
+    },
+];
+---
+
+<section id="servicios" class="bg-[#141414] py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <div class="text-center mb-14">
+            <p
+                class="text-[#D4AF37] text-xs! font-semibold tracking-widest uppercase mb-3"
+            >
+                Nuestros servicios
+            </p><h2
+                class="text-3xl md:text-4xl xl:text-5xl! font-bold text-white leading-tight mb-4"
+            >
+                Especialistas en <span class="text-[#D4AF37]"
+                    >Restauración de Suelos</span
+                >
+            </h2><p
+                class="text-[#B8B8B8] text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
+            >
+                Soluciones profesionales para cada tipo de suelo y nivel de
+                deterioro. Mármol, terrazo, hormigón y piedra natural en
+                Sevilla.
+            </p>
+        </div><div
+            class="grid grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-8 transition-all duration-700 opacity-100 translate-y-0"
+        >
+            {
+                services.map((service, index) => (
+                    <ServiceCard
+                        title={service.title}
+                        description={service.description}
+                        features={service.features}
+                        cta={service.cta}
+                        highlighted={service.highlighted}
+                        img={service.img}
+                        index={index}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>

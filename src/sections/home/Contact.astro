@@ -1,0 +1,220 @@
+---
+import PhoneIcon from "../../icons/PhoneIcon.astro";
+import MailIcon from "../../icons/MailIcon.astro";
+import TimeIcon from "../../icons/TimeIcon.astro";
+---
+
+<section
+    id="contacto"
+    class="bg-[#020617] py-20 lg:py-32 relative border-t border-[rgba(255,255,255,0.02)] -scroll-mt-100 lg:scroll-mt-0"
+>
+    <div
+        class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-310 reveal-2 opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+    >
+        <div
+            class="bg-[#0d1322] rounded-[2.5rem] p-8 sm:p-12 lg:p-16 shadow-2xl relative"
+        >
+            <div
+                class="flex flex-col lg:flex-row gap-16 lg:gap-12 relative z-10"
+            >
+                <!-- Left Side: Copy & Info -->
+                <div
+                    class="w-full lg:w-1/2 flex flex-col justify-center lg:pr-8"
+                >
+                    <h2
+                        class="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-white tracking-tight leading-[1.05] mb-6"
+                    >
+                        Empieza a generar <br /> clientes con tu web
+                    </h2>
+
+                    <p
+                        class="text-slate-400 text-sm sm:text-base leading-relaxed mb-12 max-w-md font-light"
+                    >
+                        Una web profesional puede convertirse en tu mejor
+                        herramienta para conseguir nuevos clientes. Cuéntame
+                        sobre tu proyecto y te envío una propuesta sin
+                        compromiso.
+                    </p>
+
+                    <div class="space-y-6">
+                        <!-- Email Item -->
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#152033] flex items-center justify-center shrink-0"
+                            >
+                                <MailIcon />
+                            </div>
+                            <div>
+                                <div
+                                    class="text-[13px] font-bold text-white mb-0.5"
+                                >
+                                    Email
+                                </div>
+                                <div class="text-[14px] text-slate-400">
+                                    gobestudio29@gmail.com
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#152033] flex items-center justify-center shrink-0"
+                            >
+                                <PhoneIcon />
+                            </div>
+                            <div>
+                                <div
+                                    class="text-[13px] font-bold text-white mb-0.5"
+                                >
+                                    Teléfono
+                                </div>
+                                <div class="text-[14px] text-slate-400">
+                                    +34 674 77 82 85
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Turnaround Time Item -->
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#152033] flex items-center justify-center shrink-0"
+                            >
+                                <TimeIcon />
+                            </div>
+                            <div>
+                                <div
+                                    class="text-[13px] font-bold text-white mb-0.5"
+                                >
+                                    Respuesta rápida
+                                </div>
+                                <div class="text-[14px] text-slate-400">
+                                    Menos de 24h
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Form -->
+                <div class="w-full lg:w-1/2">
+                    <div
+                        class="bg-[#040810] rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-800/40 shadow-inner"
+                    >
+                        <form
+                            action="https://formspree.io/f/mqegnglj"
+                            method="POST"
+                            class="space-y-4"
+                        >
+                            <!-- Row: Name & Email -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        for="name"
+                                        class="block font-bold text-slate-300 mb-2 tracking-wide"
+                                        >Nombre</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Tu nombre"
+                                        class="w-full bg-[#0d1322] border border-slate-800/60 text-white text-sm rounded-xl focus:ring-[#15b1ff] focus:border-[#15b1ff] block p-3.5 placeholder-slate-500 transition-colors"
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        for="email"
+                                        class="block font-bold text-slate-300 mb-2 tracking-wide"
+                                        >Email *</label
+                                    >
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="email@ejemplo.com"
+                                        required
+                                        class="w-full bg-[#0d1322] border border-slate-800/60 text-white text-sm rounded-xl focus:ring-[#15b1ff] focus:border-[#15b1ff] block p-3.5 placeholder-slate-500 transition-colors"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- Row: Phone & Subject -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        for="phone"
+                                        class="block font-bold text-slate-300 mb-2 tracking-wide"
+                                        >Teléfono *</label
+                                    >
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        placeholder="Tu teléfono"
+                                        pattern="[0-9]{9}"
+                                        title="El número de teléfono debe de contener 9 números"
+                                        required
+                                        class="w-full bg-[#0d1322] border border-slate-800/60 text-white text-sm rounded-xl focus:ring-[#15b1ff] focus:border-[#15b1ff] block p-3.5 placeholder-slate-500 transition-colors"
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        for="subject"
+                                        class="block font-bold text-slate-300 mb-2 tracking-wide"
+                                        >Asunto *</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        name="subject"
+                                        minlength="3"
+                                        placeholder="Asunto de tu consulta"
+                                        required
+                                        class="w-full bg-[#0d1322] border border-slate-800/60 text-white text-sm rounded-xl focus:ring-[#15b1ff] focus:border-[#15b1ff] block p-3.5 placeholder-slate-500 transition-colors"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label
+                                    for="message"
+                                    class="block font-bold text-slate-300 mb-2 tracking-wide"
+                                    >Mensaje / más detalles *</label
+                                >
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="4"
+                                    placeholder="Cuéntanos un poco sobre tu idea..."
+                                    required
+                                    class="w-full bg-[#0d1322] border border-slate-800/60 text-white text-sm rounded-xl focus:ring-[#15b1ff] focus:border-[#15b1ff] block p-3.5 placeholder-slate-500 transition-colors resize-none"
+                                ></textarea>
+                            </div>
+
+                            <!-- Checkbox -->
+                            <div>
+                                <label
+                                    class="flex items-center gap-1 text-sm text-gray-600 font-semibold"
+                                >
+                                    <input type="checkbox" required />
+                                    He leído y acepto la<a
+                                        href="/politica-privacidad"
+                                        class="underline text-blue-600"
+                                        >política de privacidad.</a
+                                    >
+                                </label>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="w-full mt-2 bg-[#15b1ff] hover:bg-blue-500 text-white font-semibold rounded-xl text-sm px-5 py-3.5 text-center transition-all hover:scale-[1.02] duration-300 shadow-[0_0_20px_rgba(21,177,255,0.25)]"
+                            >
+                                Enviar solicitud
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

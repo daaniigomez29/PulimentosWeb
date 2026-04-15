@@ -1,0 +1,212 @@
+---
+import TestimonialCard from "../../components/TestimonialCard.astro";
+import NextArrowIcon from "../../icons/NextArrowIcon.astro";
+import PreviousArrow from "../../icons/PreviousArrow.astro";
+---
+
+<section
+    id="opiniones-clientes"
+    class="bg-[#0b0b0b] py-24 lg:py-30 overflow-hidden relative border-t border-slate-800/30"
+>
+    <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
+        <div
+            class="reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out flex flex-col items-start text-left max-w-4xl mb-12"
+        >
+            <p
+                class="text-[#15b1ff] text-[11px]! font-bold tracking-[0.2em] uppercase mb-4"
+            >
+                Testimonios
+            </p>
+            <h2
+                class="text-3xl lg:text-5xl font-light text-white tracking-tight leading-tight mb-6"
+            >
+                Clientes que ya confiaron en <span class="font-bold"
+                    >Gobe Studio</span
+                >
+            </h2>
+            <p
+                class="text-slate-400 font-light text-sm sm:text-base leading-relaxed"
+            >
+                Negocios que necesitaban una web profesional para mejorar su
+                presencia online y empezar a captar clientes desde internet.
+            </p>
+        </div>
+
+        <!-- Divider line -->
+        <div class="w-full h-px bg-[#15b1ff]/10 mb-16"></div>
+
+        <!-- Carousel Container -->
+        <div
+            class="relative w-full max-w-5xl mx-auto testimonial-slider reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-200 px-12 sm:px-16"
+        >
+            <div class="overflow-hidden relative">
+                <div
+                    class="flex transition-transform duration-500 ease-in-out"
+                    id="testimonial-track"
+                >
+                    <!-- Slide 1 -->
+                    <TestimonialCard
+                        text="Buscábamos una web sencilla pero profesional para dar a conocer nuestros servicios. Daniel entendió perfectamente lo que necesitábamos y organizó todo de forma clara. Ahora tenemos una página moderna que transmite confianza y nos representa mucho mejor."
+                        company="Instalaciones Eléctricas Jesús Gómez"
+                        profession="Electricista"
+                        initial="logo_jesus_trans"
+                    />
+
+                    <!-- Slide 2 -->
+                    <TestimonialCard
+                        text="Necesitábamos una web nueva y desde el principio todo fue muy fácil. El trato fue cercano y el enfoque estuvo siempre en mejorar la presencia online y generar más contactos para el negocio."
+                        company="Conforzone Eficiencias"
+                        profession="Climatización"
+                        initial="logo_conforzone"
+                    />
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button
+                id="prev-testimonial"
+                class="absolute left-0 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors p-2 z-10"
+                aria-label="Testimonio anterior"
+            >
+                <PreviousArrow />
+            </button>
+            <button
+                id="next-testimonial"
+                class="absolute right-0 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors p-2 z-10"
+                aria-label="Siguiente testimonio"
+            >
+                <NextArrowIcon />
+            </button>
+
+            <!-- Dots -->
+            <div class="flex justify-center gap-2 mt-16" id="testimonial-dots">
+                <button
+                    class="w-1.5 h-1.5 rounded-full bg-slate-500 transition-colors testimonial-dot active"
+                    aria-label="Ir al testimonio 1"></button>
+                <button
+                    class="w-1.5 h-1.5 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors testimonial-dot"
+                    aria-label="Ir al testimonio 2"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function initTestimonialSlider() {
+        const track = document.getElementById("testimonial-track");
+        const prevBtn = document.getElementById("prev-testimonial");
+        const nextBtn = document.getElementById("next-testimonial");
+        const dots = document.querySelectorAll(".testimonial-dot");
+
+        if (!track) return;
+
+        let currentIndex = 0;
+        const totalSlides = track.children.length;
+
+        // Auto-playing logic could go here
+        let autoplayInterval: number | undefined;
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                if (totalSlides > 1 && window.innerWidth >= 768) {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    updateSlider();
+                }
+            }, 5000); // Change slide every 5s
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        function updateSlider() {
+            track!.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.remove("bg-slate-800", "bg-slate-700");
+                    dot.classList.add("bg-slate-500");
+                } else {
+                    dot.classList.remove("bg-slate-500");
+                    dot.classList.add("bg-slate-800");
+                }
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener("click", () => {
+                if (totalSlides <= 1) return;
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateSlider();
+                stopAutoplay(); // Stop auto-change on user interaction
+                startAutoplay(); // Restart interval
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", () => {
+                if (totalSlides <= 1) return;
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlider();
+                stopAutoplay();
+                startAutoplay();
+            });
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                if (index >= totalSlides) return;
+                currentIndex = index;
+                updateSlider();
+                stopAutoplay();
+                startAutoplay();
+            });
+        });
+
+        // Touch events for mobile swipe
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener(
+            "touchstart",
+            (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAutoplay();
+            },
+            { passive: true },
+        );
+
+        track.addEventListener(
+            "touchend",
+            (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+                startAutoplay();
+            },
+            { passive: true },
+        );
+
+        function handleSwipe() {
+            const difference = touchStartX - touchEndX;
+            const minSwipeDistance = 50;
+
+            if (Math.abs(difference) > minSwipeDistance) {
+                if (difference > 0) {
+                    // Swipe left -> next slide
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                } else {
+                    // Swipe right -> prev slide
+                    currentIndex =
+                        (currentIndex - 1 + totalSlides) % totalSlides;
+                }
+                updateSlider();
+            }
+        }
+
+        startAutoplay();
+    }
+
+    // Handle initialization properly
+    initTestimonialSlider();
+    document.addEventListener("astro:page-load", initTestimonialSlider);
+</script>

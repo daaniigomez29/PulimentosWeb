@@ -1,0 +1,122 @@
+---
+import FaqAccordion from "../../components/FaqAccordion.astro";
+---
+
+<section
+  id="faq-about-me"
+  class="bg-[#050B14] py-20 lg:py-32 border-t border-slate-800/20 scroll-mt-50"
+>
+  <div
+    class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+  >
+    <div class="flex justify-center">
+      <p
+        class="text-[#15b1ff] text-[11px]! font-bold tracking-[0.2em] uppercase mb-4"
+      >
+        FAQ
+      </p>
+    </div>
+    <h2
+      class="text-3xl sm:text-4xl font-bold text-white text-center mb-12 tracking-tight"
+    >
+      Preguntas frecuentes sobre mí y mi forma de trabajar
+    </h2>
+
+    <div
+      id="accordion-flush"
+      data-accordion="collapse"
+      data-active-classes="bg-[#0B1221] text-white"
+      data-inactive-classes="text-slate-300 hover:text-white"
+      class="space-y-4"
+    >
+      <!-- FAQ 1 -->
+      <FaqAccordion
+        question="¿Trabajas tú solo los proyectos?"
+        answer="Sí. Mi posicionamiento se basa precisamente en eso: trato directo, enfoque especializado y una relación más clara con cada cliente."
+      />
+
+      <FaqAccordion
+        question="¿Solo trabajas haciendo nuevas páginas webs?"
+        answer="No. Si ya tienes una web pero sientes que se queda corta en cuanto a tus necesidades, coméntamelo y vemos cómo podemos mejorarla para ayudarte a sacar el máximo partido a tu presencia online."
+      />
+
+      <!-- FAQ 3 -->
+      <FaqAccordion
+        question="¿Qué tipo de proyecto suele encajarte mejor?"
+        answer="Me especializo en webs para negocios locales y servicios: webs corporativas, páginas de servicios, webs para profesionales independientes y proyectos que necesiten una base sólida y profesional."
+      />
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const faqButtons = document.querySelectorAll(".faq-button");
+
+    faqButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const faqItem = button.closest(".faq-item");
+        const content = button.parentElement
+          ?.nextElementSibling as HTMLElement | null;
+        const icon = button.querySelector(".faq-icon");
+        const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+        // Close all others
+        document.querySelectorAll(".faq-button").forEach((otherBtn) => {
+          if (otherBtn !== button) {
+            otherBtn.setAttribute("aria-expanded", "false");
+            otherBtn.classList.remove("text-white");
+            otherBtn.classList.add("text-slate-300");
+
+            const otherIcon = otherBtn.querySelector(".faq-icon");
+            if (otherIcon) {
+              otherIcon.classList.remove("-rotate-180");
+            }
+
+            const otherContent = otherBtn.parentElement
+              ?.nextElementSibling as HTMLElement | null;
+            if (otherContent) {
+              otherContent.classList.remove("max-h-[500px]", "opacity-100");
+              otherContent.classList.add("max-h-0", "opacity-0");
+            }
+
+            const otherFaqItem = otherBtn.closest(".faq-item");
+            if (otherFaqItem) {
+              otherFaqItem.classList.remove("border-[#15b1ff]");
+              otherFaqItem.classList.add("border-[#ffffffbb]");
+            }
+          }
+        });
+
+        // Toggle current
+        button.setAttribute("aria-expanded", (!isExpanded).toString());
+
+        if (!isExpanded) {
+          button.classList.remove("text-slate-300");
+          button.classList.add("text-white");
+          if (icon) icon.classList.add("-rotate-180");
+          if (content) {
+            content.classList.remove("max-h-0", "opacity-0");
+            content.classList.add("max-h-[500px]", "opacity-100");
+          }
+          if (faqItem) {
+            faqItem.classList.remove("border-[#ffffffbb]");
+            faqItem.classList.add("border-[#15b1ff]");
+          }
+        } else {
+          button.classList.remove("text-white");
+          button.classList.add("text-slate-300");
+          if (icon) icon.classList.remove("-rotate-180");
+          if (content) {
+            content.classList.remove("max-h-[500px]", "opacity-100");
+            content.classList.add("max-h-0", "opacity-0");
+          }
+          if (faqItem) {
+            faqItem.classList.remove("border-[#15b1ff]");
+            faqItem.classList.add("border-[#ffffffbb]");
+          }
+        }
+      });
+    });
+  });
+</script>

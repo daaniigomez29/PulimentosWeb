@@ -1,0 +1,78 @@
+---
+import ServiceCard from "../../components/ServiceCard.astro";
+
+const services = [
+    {
+        title: "Web corporativa profesional",
+        description: "Para empresas que necesitan presencia sólida y confianza",
+        features: [
+            "Diseño alineado con tu marca",
+            "Páginas clave (inicio, servicios, contacto…)",
+            "SEO técnico",
+            "Headless CMS integrado",
+            "Soporte 1 año",
+        ],
+        cta: "Quiero mejorar mi imagen online",
+        highlighted: false,
+    },
+    {
+        title: "Landing page para captar clientes",
+        description:
+            "Ideal para negocios que quieren generar contactos o ventas",
+        features: [
+            "Diseño personalizado enfocado en conversión",
+            "Estructura clara y estratégica",
+            "SEO técnico",
+            "Headless CMS integrado",
+            "Pautas para mejorar durante el primer año.",
+        ],
+        cta: "Quiero más clientes",
+        highlighted: true,
+    },
+    {
+        title: "Rediseño web",
+        description: "Para webs que ya existen pero no están funcionando",
+        features: [
+            "Análisis de la web actual",
+            "Mejora de estructura y diseño",
+            "Optimización de rendimiento",
+            "SEO técnico",
+            "Enfoque en conversión",
+        ],
+        cta: "Mejorar mi web actual",
+        highlighted: false,
+    },
+];
+---
+
+<section id="paquetes-web" class="py-24 bg-[#050B14]">
+    <div
+        class="max-w-350 mx-auto px-6 lg:px-8 flex flex-col items-center justify-center"
+    >
+        <div class="text-center mb-20 reveal">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Servicios a medida
+            </h2>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+                Soluciones adaptadas a las necesidades específicas de tu negocio
+            </p>
+        </div>
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10 mt-0 xl:mt-4 max-w-250 justify-center"
+        >
+            {
+                services.map((service, index) => (
+                    <ServiceCard
+                        title={service.title}
+                        description={service.description}
+                        features={service.features}
+                        cta={service.cta}
+                        highlighted={service.highlighted}
+                        index={index}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,144 @@
+---
+interface Props {
+  before: string;
+  after: string;
+  floor: string;
+  service: string;
+}
+
+const { before, after, floor, service } = Astro.props;
+---
+
+<div
+  class="job-card relative rounded-xl overflow-hidden cursor-col-resize select-none"
+  data-position="50"
+>
+  <!-- After image (full background) -->
+  <img
+    src={after}
+    alt={`Después - ${floor} ${service} Sevilla`}
+    class="w-full h-56 md:h-64 object-cover object-top"
+    loading="lazy"
+    draggable="false"
+  />
+
+  <!-- Before image (clipped overlay) -->
+  <div
+    class="before-overlay absolute inset-0 overflow-hidden"
+    style="width: 50%;"
+  >
+    <img
+      src={before}
+      alt={`Antes - ${floor} ${service} Sevilla`}
+      class="w-full h-56 md:h-64 object-cover object-top"
+      style="width: 200%; max-width: none;"
+      loading="lazy"
+      draggable="false"
+    />
+  </div>
+
+  <!-- Divider -->
+  <div
+    class="divider absolute top-0 bottom-0 w-0.5 bg-[#D4AF37]"
+    style="left: 50%;"
+  >
+    <div
+      class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 flex items-center justify-center bg-[#D4AF37] rounded-full pointer-events-none"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-4 h-4 text-white"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M8 9l-4 3 4 3M16 9l4 3-4 3"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Labels -->
+  <div
+    class="absolute top-3 left-3 bg-black/60 text-white text-xs px-2 py-1 rounded pointer-events-none"
+  >
+    Antes
+  </div>
+  <div
+    class="absolute top-3 right-3 bg-[#D4AF37]/90 text-white text-xs px-2 py-1 rounded pointer-events-none"
+  >
+    Después
+  </div>
+
+  <!-- Caption -->
+  <div
+    class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-4 pointer-events-none"
+  >
+    <p class="text-[#D4AF37] text-xs font-semibold uppercase tracking-wide">
+      {floor}
+    </p>
+    <p class="text-white text-sm">{service}</p>
+  </div>
+</div>
+
+<script>
+  function initSlider(card: HTMLElement) {
+    const overlay = card.querySelector<HTMLElement>(".before-overlay")!;
+    const divider = card.querySelector<HTMLElement>(".divider")!;
+    let dragging = false;
+
+    function setPosition(clientX: number) {
+      const rect = card.getBoundingClientRect();
+      const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+      const pct = (x / rect.width) * 100;
+
+      overlay.style.width = `${pct}%`;
+      divider.style.left = `${pct}%`;
+
+      // Fix the before image width so it doesn't stretch
+      const img = overlay.querySelector<HTMLImageElement>("img")!;
+      img.style.width = pct > 0 ? `${(100 / pct) * 100}%` : "200%";
+    }
+
+    // Mouse
+    card.addEventListener("mousedown", (e) => {
+      dragging = true;
+      setPosition(e.clientX);
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (dragging) setPosition(e.clientX);
+    });
+
+    window.addEventListener("mouseup", () => {
+      dragging = false;
+    });
+
+    // Touch
+    card.addEventListener(
+      "touchstart",
+      (e) => {
+        dragging = true;
+        setPosition(e.touches[0].clientX);
+      },
+      { passive: true },
+    );
+
+    window.addEventListener(
+      "touchmove",
+      (e) => {
+        if (dragging) setPosition(e.touches[0].clientX);
+      },
+      { passive: true },
+    );
+
+    window.addEventListener("touchend", () => {
+      dragging = false;
+    });
+  }
+
+  // Init all cards on the page
+  document.querySelectorAll<HTMLElement>(".job-card").forEach(initSlider);
+</script>

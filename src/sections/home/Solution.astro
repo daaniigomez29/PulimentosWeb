@@ -1,0 +1,196 @@
+---
+import FeatureCard from "../../components/FeatureCard.astro";
+import CodeIcon from "../../icons/CodeIcon.astro";
+import EditPencil from "../../icons/EditPencil.astro";
+import LensIcon from "../../icons/LensIcon.astro";
+import LightningIcon from "../../icons/LightningIcon.astro";
+import MobileIcon from "../../icons/MobileIcon.astro";
+import ThumbUpIcon from "../../icons/ThumbUpIcon.astro";
+import TickIcon from "../../icons/TickIcon.astro";
+
+// Icons could be defined inline as SVGs for convenience.
+---
+
+<section
+  id="soluciones"
+  class="bg-[#050B14] py-20 lg:py-32 overflow-hidden relative border-t border-slate-800/20 scroll-mt-10"
+>
+  <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-350">
+    <!-- Top Section: Para quién es -->
+    <div
+      class="flex flex-col lg:flex-col gap-5 mb-24 lg:mb-28 reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+    >
+      <div class="w-full lg:w-1/2 flex flex-col">
+        <p
+          class="text-[#15b1ff] text-[11px]! font-bold tracking-[0.2em] uppercase mb-4"
+        >
+          Para quién es
+        </p>
+        <h2
+          class="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight mb-8"
+        >
+          ¿Para quién es este servicio?
+        </h2>
+
+        <div
+          class="space-y-6 text-slate-300 text-[15px] sm:text-base leading-relaxed max-w-150 font-light"
+        >
+          <p>Este servicio es para ti si:</p>
+        </div>
+
+        <!-- Text Description
+        <div
+          class="space-y-6 text-slate-300 text-[15px] sm:text-base leading-relaxed max-w-150 font-light"
+        >
+          <p>
+            Gobe Studio prioriza potenciar negocios que necesitan una presencia
+            digital seria, profesional y optimizada para buscadores.
+          </p>
+          <p>
+            Gobe Studio crea herramientas de captación de clientes, diseñadas
+            específicamente para el ecosistema comercial de nuestra ciudad.
+          </p>
+        </div>
+        -->
+      </div>
+
+      <!-- Benefits List & Info Box -->
+      <div class="w-full">
+        <ul class="space-y-0 grid grid-cols-1 md:grid-cols-2">
+          <li class="flex items-start gap-4 py-5">
+            <TickIcon />
+            <span class="text-slate-300 sm:text-base leading-relaxed"
+              >Tu web actual se ve antigua o genera poca confianza.</span
+            >
+          </li>
+          <li class="flex items-start gap-4 py-5">
+            <TickIcon />
+            <span class="text-slate-300 sm:text-base leading-relaxed"
+              >Dependes demasiado de redes sociales para conseguir clientes.</span
+            >
+          </li>
+          <li class="flex items-start gap-4 py-5">
+            <TickIcon />
+            <span class="text-slate-300 sm:text-base leading-relaxed"
+              >Tienes un negocio o servicio y necesitas una web clara para
+              presentarte.</span
+            >
+          </li>
+          <li class="flex items-start gap-4 py-5">
+            <TickIcon />
+            <span class="text-slate-300 sm:text-base leading-relaxed"
+              >Quieres una página para empezar a captar contactos.</span
+            >
+          </li>
+          <li class="flex items-start gap-4 py-5">
+            <TickIcon />
+            <span class="text-slate-300 sm:text-base leading-relaxed"
+              >Necesitas una web profesional para crecer online.</span
+            >
+          </li>
+          <li class="flex items-start gap-4 py-5">
+            <TickIcon />
+            <span class="text-slate-300 sm:text-base leading-relaxed"
+              >Recibes visitas en tu web, pero no se convierten en clientes.</span
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- Text Description-->
+      <div
+        class="space-y-6 text-slate-300 text-[15px] sm:text-base leading-relaxed grid grid-cols-1 md:grid-cols-2 font-light"
+      >
+        <p>
+          Gobe Studio prioriza potenciar negocios que necesitan una presencia
+          digital seria, profesional y optimizada para buscadores.
+        </p>
+        <p>
+          Gobe Studio crea herramientas de captación de clientes, diseñadas
+          específicamente para el ecosistema comercial de nuestra ciudad.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subtle separator line extending full width but semi-transparent
+  <div class="h-px w-full bg-slate-800/40 mb-20 lg:mb-28"></div>-->
+
+  <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-350">
+    <!-- Bottom Section: Features Grid -->
+    <h2
+      class="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight mb-8"
+    >
+      ¿Qué incluye cada proyecto?
+    </h2>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-2 opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-200"
+    >
+      <FeatureCard
+        title="Código optimizado"
+        description="Arquitectura limpia y moderna para una velocidad de carga instantánea en cualquier dispositivo."
+      >
+        <CodeIcon slot="icon" />
+      </FeatureCard>
+
+      <FeatureCard
+        title="SEO Básico"
+        description="Estructura preparada para que Google te encuentre y te posicione entre los primeros de Sevilla."
+      >
+        <LensIcon slot="icon" />
+      </FeatureCard>
+
+      <FeatureCard
+        title="Diseño responsive"
+        description="Tu negocio se verá perfecto tanto en el último iPhone como en una pantalla de escritorio."
+      >
+        <MobileIcon slot="icon" />
+      </FeatureCard>
+
+      <FeatureCard
+        title="Soporte post-lanzamiento"
+        description="No te dejo solo. Incluyo acompañamiento técnico para resolver cualquier duda."
+      >
+        <ThumbUpIcon slot="icon" />
+      </FeatureCard>
+
+      <FeatureCard
+        title="Entrega rápida"
+        description="Procesos ágiles para que tu web esté funcionando en tiempo récord sin perder calidad."
+      >
+        <LightningIcon slot="icon" />
+      </FeatureCard>
+
+      <FeatureCard
+        title="Gestión de Contenido (Headless CMS)"
+        description="Te entrego una web con un panel de control sencillo para que puedas editar textos, imágenes y servicios sin depender de nadie."
+      >
+        <EditPencil slot="icon" />
+      </FeatureCard>
+    </div>
+  </div>
+  <div
+    class="reveal container mx-auto px-6 sm:px-8 lg:px-12 max-w-350 pt-40 opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-300"
+  >
+    <p
+      class="text-4xl! sm:text-5xl font-bold text-white text-center tracking-tight leading-tight mb-8"
+    >
+      Descubre cómo una web puede hacer crecer tu negocio
+    </p>
+    <div
+      class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-5 w-full sm:w-auto"
+    >
+      <a
+        href="/servicios#paquetes-web"
+        class="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 rounded-full bg-[#15b1ff] hover:bg-blue-500 text-white font-medium text-lg transition-transform hover:scale-105 duration-300 shadow-[0_0_20px_rgba(21,177,255,0.3)]"
+      >
+        Quiero una web que funcione
+      </a>
+      <a
+        href="#nuestros-trabajos"
+        class="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 rounded-full bg-[#2a3343] hover:bg-[#1e2532] text-white font-medium text-lg transition-transform hover:scale-105 duration-300"
+      >
+        Ver trabajos
+      </a>
+    </div>
+  </div>
+</section>

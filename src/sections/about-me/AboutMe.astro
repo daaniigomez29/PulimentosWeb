@@ -1,0 +1,88 @@
+---
+import LocationIcon from "../../icons/LocationIcon.astro";
+---
+
+<section
+    id="sobre-mi"
+    class="relative bg-[#050B14] min-h-screen flex items-center pt-20 pb-16 overflow-hidden"
+>
+    <!-- Subtle dark background glow -->
+    <div
+        class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-900/10 blur-[120px] pointer-events-none"
+    >
+    </div>
+
+    <div class="max-w-350 w-full mx-auto px-6 sm:px-8 lg:px-12">
+        <div
+            class="flex flex-col lg:flex-row items-center justify-between lg:gap-12"
+        >
+            <!-- Left Content -->
+            <div
+                class="w-full lg:w-[60%] flex flex-col items-start z-10 reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+            >
+                <!-- Badge -->
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-700/50 backdrop-blur-sm mb-10"
+                >
+                    <LocationIcon />
+                    <span
+                        class="text-[11px] font-bold tracking-[0.15em] text-slate-300 uppercase mt-px"
+                        >Sobre mí</span
+                    >
+                </div>
+
+                <!-- Heading -->
+                <h1
+                    class="text-[2.75rem] sm:text-6xl lg:text-[5.5rem] font-bold text-white tracking-tight leading-[1.05] mb-8"
+                >
+                    Soy Daniel Gómez,
+                    <span
+                        class="text-transparent bg-clip-text bg-linear-to-r from-[#22b2ff] to-[#4970ff] inline-block my-2"
+                        >desarrollador web en Sevilla</span
+                    >
+                    especializado en obtener clientes
+                </h1>
+
+                <!-- Description -->
+                <p
+                    class="text-lg sm:text-xl text-slate-400 max-w-150 leading-relaxed mb-12"
+                >
+                    Ayudo a negocios y profesionales a tener una web más clara,
+                    más profesional y mejor enfocada en captar oportunidades. Mi
+                    trabajo no consiste solo en desarrollar páginas: consiste en
+                    construir una web que represente bien tu negocio.
+                </p>
+
+                <!-- Buttons -->
+                <div
+                    class="flex flex-col sm:flex-row items-center gap-4 mb-16 w-full sm:w-auto"
+                >
+                    <a
+                        href="/#contacto"
+                        class="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 rounded-full bg-[#15b1ff] hover:bg-blue-500 text-white font-medium text-lg transition-transform hover:scale-105 duration-300 shadow-[0_0_20px_rgba(21,177,255,0.3)]"
+                    >
+                        Contacte ahora
+                    </a>
+                    <a
+                        href="/#nuestros-trabajos"
+                        class="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 rounded-full bg-[#1e2532] hover:bg-[#2a3343] text-white font-medium text-lg transition-transform hover:scale-105 duration-300"
+                    >
+                        Ver trabajos
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Image Container
+            <div
+                class="w-full lg:w-[70%] relative z-10 lg:mt-0 reveal-2 opacity-0 translate-x-20 transition-all duration-1000 ease-out delay-200"
+            >
+                <img
+                    src="/assets/monitor2.png"
+                    alt="Hero"
+                    class="w-full h-auto"
+                />
+            </div>
+             -->
+        </div>
+    </div>
+</section>

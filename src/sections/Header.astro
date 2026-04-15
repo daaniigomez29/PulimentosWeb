@@ -1,0 +1,202 @@
+---
+import ClockIcon from "../icons/ClockIcon.astro";
+import HambuguerMenuIcon from "../icons/HambuguerMenuIcon.astro";
+import MailIcon from "../icons/MailIcon.astro";
+import NextArrowIcon from "../icons/NextArrowIcon.astro";
+import PhoneIcon from "../icons/PhoneIcon.astro";
+import PreviewArrowIcon from "../icons/PreviewArrowIcon.astro";
+import PreviousArrow from "../icons/PreviousArrow.astro";
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 pb-4">
+  <div class="bg-[#151515] py-2 px-4 md:px-8">
+    <div
+      class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-0"
+    >
+      <div class="flex items-center gap-4 md:gap-6">
+        <a
+          class="flex items-center gap-2 text-white hover:text-[#D4AF37] transition-colors cursor-pointer whitespace-nowrap"
+        >
+          <PhoneIcon />
+          <p class="text-sm! md:text-md!">691 88 63 70</p>
+        </a>
+        <span class="text-[#D4AF37] opacity-50 hidden sm:block">|</span>
+        <a
+          class="flex items-center gap-2 text-white hover:text-[#D4AF37] transition-colors cursor-pointer whitespace-nowrap"
+        >
+          <MailIcon />
+          <p class="text-sm! md:text-md!">pulimentosruiz@gmail.com</p>
+        </a>
+      </div>
+      <div class="flex items-center gap-2 text-[#B0B0B0]">
+        <ClockIcon />
+        <p class="text-sm! md:text-md!">Lun-Vie 8:30 - 18:00</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav
+    class="transition-all duration-300 bg-[#1A1A1A]/95 backdrop-blur-md shadow-lg shadow-black/30"
+  >
+    <div
+      class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20"
+    >
+      <a href="#inicio" class="flex items-center gap-3 cursor-pointer"
+        ><img
+          alt="Pulimentos Ruiz logo pulido acristalado suelos Sevilla"
+          class="h-10 md:h-12 w-auto rounded-md object-contain"
+          src="assets/logos/logo.jpeg"
+        /><span
+          class="text-white font-semibold text-base md:text-lg hidden sm:block"
+          >Pulimentos <span class="text-[#D4AF37]">Ruiz</span></span
+        ></a
+      ><ul class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <li>
+          <button
+            class="text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#D4AF37] border-[#D4AF37]"
+            >Inicio</button
+          >
+        </li><li>
+          <button
+            class="text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#E0E0E0] border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37]"
+            >Sobre Nosotros</button
+          >
+        </li><li>
+          <button
+            class="text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#E0E0E0] border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37]"
+            >Servicios</button
+          >
+        </li><li>
+          <button
+            class="text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#E0E0E0] border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37]"
+            >Trabajos</button
+          >
+        </li><li>
+          <button
+            class="text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#E0E0E0] border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37]"
+            >Opiniones</button
+          >
+        </li><li>
+          <button
+            class="text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap pb-1 border-b-2 text-[#E0E0E0] border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37]"
+            >Contacto</button
+          >
+        </li>
+      </ul><div class="flex items-center gap-3">
+        <button
+          class="hidden md:flex items-center gap-2 bg-linear-to-r from-[#D4AF37] to-[#B8960F] text-white text-xs xl:text-sm font-semibold px-4 xl:px-6 py-2.5 rounded-full whitespace-nowrap hover:scale-105 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-200 cursor-pointer"
+          >Solicita presupuesto gratis<span
+            class="w-4 h-4 flex items-center justify-center"
+          >
+            <NextArrowIcon />
+          </span></button
+        ><button
+          class="lg:hidden w-10 h-10 flex items-center justify-center text-[#D4AF37] cursor-pointer"
+          aria-label="Abrir menú"><i class="text-2xl ri-menu-line"></i></button
+        >
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById(
+      "menu-toggle-btn",
+    ) as HTMLButtonElement | null;
+    const navbarItem = document.getElementById(
+      "navbar-default",
+    ) as HTMLDivElement | null;
+    const navLinks = document.querySelectorAll("#navbar-default a");
+
+    let isMenuOpen = false;
+
+    const toggleMenu = () => {
+      isMenuOpen = !isMenuOpen;
+      if (toggleButton) {
+        toggleButton.setAttribute("aria-expanded", isMenuOpen.toString());
+      }
+      if (navbarItem) {
+        if (isMenuOpen) {
+          navbarItem.classList.remove("max-h-0", "opacity-0");
+          navbarItem.classList.add("max-h-150", "opacity-100");
+        } else {
+          navbarItem.classList.remove("max-h-150", "opacity-100");
+          navbarItem.classList.add("max-h-0", "opacity-0");
+        }
+      }
+    };
+
+    if (toggleButton) {
+      toggleButton.addEventListener("click", toggleMenu);
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 1024 && isMenuOpen) {
+          toggleMenu();
+        }
+      });
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav ul a");
+
+    const callback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") === entry.target.id) {
+              item.classList.add("nav-link-selected");
+            } else {
+              item.classList.remove("nav-link-selected");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    };
+  });
+</script>
+
+<style>
+  .nav-link {
+    color: white;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #15b1ff;
+  }
+
+  .nav-link-selected {
+    color: #15b1ff;
+  }
+
+  .nav-link-selected[aria-label="contacto"] {
+    background-color: #f39615;
+    color: white;
+  }
+</style>

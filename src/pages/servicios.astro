@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NextStep from "../sections/about-me/NextStep.astro";
+import ServicesHero from "../sections/services/ServicesHero.astro";
+import Services from "../sections/services/Services.astro";
+---
+
+<Layout
+    title="Servicios de desarrollo web profesional para captar clientes | Gobe Studio"
+    description="Descubre los servicios de desarrollo web que ofrece Gobe Studio. Especializado en soluciones modernas, eficientes y personalizadas para transformar tus ideas en proyectos digitales de alto impacto."
+>
+    <main>
+        <ServicesHero />
+        <Services />
+    </main>
+</Layout>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("opacity-100", "translate-y-0");
+                entry.target.classList.remove("opacity-0", "translate-y-10");
+            }
+        });
+    });
+
+    const observer2 = new IntersectionObserver((entries) => {
+        if (window.innerWidth < 1280) return; // solo XL+
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("opacity-100", "translate-x-0");
+                entry.target.classList.remove(
+                    "xl:opacity-0",
+                    "xl:translate-x-20",
+                );
+            }
+        });
+    });
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    document
+        .querySelectorAll(".reveal-2")
+        .forEach((el) => observer2.observe(el));
+</script>

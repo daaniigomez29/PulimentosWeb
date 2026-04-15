@@ -1,0 +1,56 @@
+---
+import HowWorkCard from "../../components/HowWorkCard.astro";
+---
+
+<section
+    id="como-trabajo"
+    class="relative bg-[#050B14] py-24 sm:py-32 overflow-hidden"
+>
+    <div class="max-w-350 w-full mx-auto px-6 sm:px-8 lg:px-12">
+        <div
+            class="reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+        >
+            <!-- Overline -->
+            <p
+                class="text-[11px]! font-bold tracking-[0.15em] text-[#15b1ff] uppercase mb-4"
+            >
+                Cómo trabajo
+            </p>
+
+            <!-- Heading -->
+            <h2
+                class="text-4xl sm:text-5xl lg:text-6xl font-medium text-slate-200 mb-6 tracking-tight"
+            >
+                No trabajo como una agencia grande. Trabajo contigo de forma
+                directa.
+            </h2>
+
+            <!-- Paragraph -->
+            <p class="text-slate-400 text-[1.125rem] sm:text-lg mb-10">
+                Mi manera de trabajar es más simple, más directa y más enfocada
+                en hacer bien el proyecto que en inflar procesos o vender extras
+                que no necesitas.
+            </p>
+
+            <!-- List -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                <HowWorkCard
+                    title="Entender bien el negocio"
+                    description="Antes de hacer nada, necesito entender qué haces, a quién ayudas y qué debería conseguir la web."
+                />
+                <HowWorkCard
+                    title="Ordenar la estructura"
+                    description="La claridad no sale sola. Trabajo la arquitectura de la web para que todo tenga sentido."
+                />
+                <HowWorkCard
+                    title="Definir mensajes claros"
+                    description="La web tiene que explicar bien lo que haces y ayudar al usuario a entender rápido tu valor."
+                />
+                <HowWorkCard
+                    title="Desarrollar con una base profesional"
+                    description="Trabajo con las mejores tecnologías necesarias dependiendo del proyecto con foco en responsive, velocidad, buena estructura y facilidad de gestión."
+                />
+            </div>
+        </div>
+    </div>
+</section>

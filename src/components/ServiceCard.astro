@@ -1,0 +1,51 @@
+---
+import TickIcon from "../icons/TickIcon.astro";
+
+interface Props {
+    title: string;
+    description: string;
+    features: string[];
+    cta: string;
+    highlighted: boolean;
+    index: number;
+    img: string;
+}
+
+const { title, description, features, cta, highlighted, index, img } =
+    Astro.props;
+---
+
+<article
+    class="reveal opacity-0 translate-y-10 bg-[#1E1E1E] rounded-2xl overflow-hidden border-t-4 border-[#D4AF37] hover:scale-[1.02] transition-all duration-700 flex flex-col"
+>
+    <div class="relative">
+        <img
+            alt={`${title} - Pulimentos Ruiz`}
+            title={title}
+            class="w-full h-48 object-cover object-top"
+            loading="lazy"
+            src={img}
+        /><div
+            class="absolute inset-0 bg-linear-to-t from-[#1E1E1E]/60 to-transparent"
+        >
+        </div><div
+            class="absolute top-3 left-3 w-10 h-10 flex items-center justify-center bg-linear-to-br from-[#D4AF37] to-[#B8960F] rounded-full text-white font-bold text-sm"
+        >
+            S{index + 1}
+        </div>
+    </div><div class="p-6 flex flex-col flex-1">
+        <h3 class="text-white font-semibold text-lg mb-3 leading-snug">
+            {title}
+        </h3><p class="text-[#B8B8B8] text-sm leading-relaxed mb-4">
+            {description}
+        </p><button
+            class="text-[#D4AF37] text-sm font-medium hover:underline text-left mb-4 cursor-pointer whitespace-nowrap"
+            >Ver detalles completos +</button
+        ><div class="mt-auto">
+            <button
+                class="w-full border-2 border-[#D4AF37] text-[#D4AF37] font-semibold text-sm py-3 rounded-full hover:bg-[#D4AF37] hover:text-white transition-all duration-200 cursor-pointer whitespace-nowrap"
+                >{cta}</button
+            >
+        </div>
+    </div>
+</article>

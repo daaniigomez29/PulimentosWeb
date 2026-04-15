@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Contact from "../sections/home/Contact.astro";
+import Hero from "../sections/home/Hero.astro";
+import Opinions from "../sections/home/Opinions.astro";
+import OurJobs from "../sections/home/OurJobs.astro";
+import Solution from "../sections/home/Solution.astro";
+import FaqSection from "../sections/home/FaqSection.astro";
+import Methodology from "../sections/home/Methodology.astro";
+import AboutUs from "../sections/home/AboutUs.astro";
+import Services from "../sections/home/Services.astro";
+---
+
+<Layout
+    title="Pulido y Acristalado de Suelos en Sevilla | Pulimentos"
+    description="Pulido y acristalado de suelos en Sevilla. Expertos en pulido de mármol, terrazo, granito, hormigón, barro y piedra natural."
+>
+    <main>
+        <Hero />
+        <AboutUs />
+        <Services />
+        <OurJobs />
+        <Solution />
+        <Methodology />
+        <FaqSection />
+        <Contact />
+    </main>
+    <script>
+        import { initFlowbite } from "flowbite";
+        initFlowbite;
+    </script>
+</Layout>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("opacity-100", "translate-y-0");
+                entry.target.classList.remove("opacity-0", "translate-y-10");
+            }
+        });
+    });
+
+    const observer2 = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("opacity-100", "translate-x-0");
+                entry.target.classList.remove("opacity-0", "translate-x-20");
+            }
+        });
+    });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    document
+        .querySelectorAll(".reveal-2")
+        .forEach((el) => observer2.observe(el));
+</script>

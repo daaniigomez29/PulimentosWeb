@@ -1,0 +1,117 @@
+---
+import StepMethodology from "../../components/StepMethodology.astro";
+
+const steps = [
+  {
+    step: "01",
+    title: "Análisis",
+    description: "Analizo tu negocio, tus servicios y el objetivo de la web.",
+  },
+  {
+    step: "02",
+    title: "Estructura",
+    description:
+      "Defino la estructura de la web para que sea clara y fácil de entender.",
+  },
+  {
+    step: "03",
+    title: "Desarrollo",
+    description: "Diseño y desarrollo la web optimizada para velocidad y SEO.",
+  },
+  {
+    step: "04",
+    title: "Publicación",
+    description:
+      "La web se publica lista para recibir visitas y generar consultas.",
+  },
+];
+---
+
+<section
+  id="metodologia"
+  class="bg-[#0b0b0b] py-24 lg:py-30 overflow-hidden relative border-t border-slate-800/30"
+>
+  <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-350">
+    <div
+      class="reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out flex flex-col md:items-start text-left max-w-3xl"
+    >
+      <p
+        class="text-[#15b1ff] text-[11px]! font-bold tracking-[0.2em] uppercase mb-5"
+      >
+        Metodología
+      </p>
+      <h2
+        class="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight mb-6"
+      >
+        Cómo trabajo
+      </h2>
+      <p class="text-slate-400 font-light">
+        Un proceso claro para que tu web esté lista sin complicaciones.
+      </p>
+    </div>
+
+    <!-- Steps Container -->
+    <div
+      class="mt-10 relative reveal-2 opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-200"
+    >
+      <!-- Horizontal line for desktop -->
+      <!--Del paso 1 al 2: 75%, 2 al 3: 49%, 3 al 4: 20%-->
+      <div
+        class="hidden md:block absolute top-7 left-[5%] right-[23%] h-px bg-[#15b1ff]/20 z-0"
+      >
+      </div>
+
+      <!-- Vertical line for mobile -->
+      <div
+        class="block md:hidden absolute left-7 top-[5%] bottom-[10%] w-px bg-[#15b1ff]/20 z-0"
+      >
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 lg:gap-12 relative z-10"
+      >
+        <!-- Steps -->
+
+        {
+          steps.map((step, index) => (
+            <StepMethodology
+              step={step.step}
+              title={step.title}
+              description={step.description}
+              index={index}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const observerMethodology = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+
+        const index = Number(el.dataset.index);
+
+        setTimeout(() => {
+          // Estado activo
+          el.classList.add("flash");
+
+          // Volver al estado original después de 1s
+          setTimeout(() => {
+            el.classList.remove("flash");
+          }, 1000);
+        }, index * 1000);
+
+        // Opcional: que solo ocurra una vez
+        observerMethodology.unobserve(el);
+      }
+    });
+  });
+
+  document
+    .querySelectorAll(".reveal-methodology")
+    .forEach((el) => observerMethodology.observe(el));
+</script>

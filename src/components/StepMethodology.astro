@@ -1,0 +1,45 @@
+---
+interface Props {
+    step: string;
+    title: string;
+    description: string;
+    index: number;
+}
+
+const { step, title, description, index } = Astro.props;
+---
+
+<div
+    class="flex flex-row md:flex-col gap-6 md:gap-8 items-start"
+    style={`transition-delay: ${index * 1000}ms;`}
+>
+    <div
+        data-index={index}
+        class="reveal-methodology h-14 w-14 shrink-0 rounded-full bg-[#0b0b0b] border border-[#15b1ff]/30 group hover:bg-[#15b1ff] shadow-[0_0_15px_rgba(21,177,255,0.15)] transition-all duration-300 ease-in-out flex items-center justify-center relative"
+    >
+        <span
+            class="text-[#15b1ff] group-hover:text-white transition-colors duration-300 ease-in-out text-sm font-semibold tracking-wider"
+            >{step}</span
+        >
+    </div>
+    <div class="pt-2 md:pt-0">
+        <h3 class="text-[18px]! text-white text-lg font-medium mb-3">
+            {title}
+        </h3>
+        <p
+            class="text-slate-400 text-[15px] font-light leading-relaxed pr-4 md:pr-0 lg:pr-6"
+        >
+            {description}
+        </p>
+    </div>
+</div>
+
+<style>
+    .flash {
+        background-color: #15b1ff;
+    }
+
+    .flash span {
+        color: white;
+    }
+</style>
