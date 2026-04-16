@@ -86,7 +86,7 @@ const navItems = [
           href="#contacto"
           class="nav-link hidden xl:flex items-center gap-2 bg-linear-to-r from-[#D4AF37] to-[#B8960F] text-white text-xs xl:text-sm font-semibold px-4 xl:px-6 py-2.5 rounded-full whitespace-nowrap hover:scale-105 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-200 cursor-pointer"
         >
-          Solicita presupuesto gratis
+          Solicita tu presupuesto
           <span class="w-4 h-4 flex items-center justify-center">
             <NextArrowIcon />
           </span>
@@ -129,7 +129,7 @@ const navItems = [
             href="#contacto"
             class="nav-link mobile-nav-link block w-full text-center bg-linear-to-r from-[#D4AF37] to-[#B8960F] text-white text-sm font-semibold py-3 rounded-full cursor-pointer"
           >
-            Solicita presupuesto gratis
+            Solicita presupuesto
           </a>
         </li>
       </ul>
@@ -194,14 +194,13 @@ const navItems = [
       const href = link.getAttribute("href");
       if (!href?.startsWith("#")) return;
 
-      e.preventDefault();
       const target = document.getElementById(href.replace("#", ""));
       if (target) target.scrollIntoView({ behavior: "smooth" });
 
       // Close mobile menu if open
       mobileMenu.classList.add("hidden");
-      iconOpen.classList.remove("hidden");
-      iconClose.classList.add("hidden");
+      iconOpen?.classList.remove("hidden");
+      iconClose?.classList.add("hidden");
       toggleBtn.setAttribute("aria-expanded", "false");
     });
   });

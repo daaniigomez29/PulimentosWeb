@@ -1,144 +1,200 @@
 ---
+import ClockIcon from "../icons/ClockIcon.astro";
+import FacebookIcon from "../icons/FacebookIcon.astro";
+import GoogleIcon from "../icons/GoogleIcon.astro";
+import InstagramIcon from "../icons/InstagramIcon.astro";
+import LocationIcon from "../icons/LocationIcon.astro";
+import MailIcon from "../icons/MailIcon.astro";
+import PhoneIcon from "../icons/PhoneIcon.astro";
 import WhatsappIcon from "../icons/WhatsappIcon.astro";
 ---
 
-<footer
-    class="bg-[#020617] text-slate-400 py-16 px-6 lg:px-20 border-t border-slate-800/50"
->
-    <div
-        class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between gap-12 lg:gap-8"
-    >
-        <div class="lg:w-1/3 flex flex-col gap-5">
-            <p class="text-white text-xl md:text-2xl font-bold">Gobe Studio</p>
-            <p
-                class="text-slate-400 leading-relaxed pr-2 md:pr-8 text-sm md:text-base"
-            >
-                Experto en desarrollo web de alto impacto en Sevilla. Llevo la
-                presencia digital de los negocios locales al siguiente nivel.
-            </p>
-            <div class="flex gap-5">
-                <a
-                    href="https://wa.me/674778285"
-                    target="_blank"
-                    aria-label="Enviar mensaje por WhatsApp"
-                    rel="noopener noreferrer"
-                >
-                    <WhatsappIcon />
-                </a>
-            </div>
-        </div>
-
+<footer id="footer" class="bg-[#0F0F0F] pt-16 pb-6">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
         <div
-            class="flex flex-col sm:flex-row gap-12 sm:gap-16 xl:gap-32 w-full lg:w-auto lg:pr-10"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
         >
-            <div class="flex flex-col gap-6">
-                <h3
-                    class="text-white text-xs md:text-sm! font-bold tracking-widest uppercase"
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img
+                        alt="Pulimentos Ruiz"
+                        class="h-10 w-auto rounded-md"
+                        src="https://static.readdy.ai/image/4b9dbb29d2c37c7158e753421965795f/a6c67dd16af90476330940747724314e.jpeg"
+                    /><span class="text-white font-semibold text-base"
+                        >Pulimentos <span class="text-[#D4AF37]">Ruiz</span
+                        ></span
+                    >
+                </div><p
+                    class="text-[#888] text-sm italic leading-relaxed mb-5"
                 >
-                    Empresa
-                </h3>
-                <ul class="flex flex-col gap-5 text-sm md:text-base">
+                    "Devolviendo el brillo a tus espacios desde 1998"
+                </p><div class="flex gap-3">
+                    <a
+                        href="#"
+                        rel="nofollow noopener noreferrer"
+                        class="w-9 h-9 flex items-center justify-center bg-[#1E1E1E] rounded-full text-[#888] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-200 cursor-pointer"
+                    >
+                        <FacebookIcon stroke="#888" height="15" width="15" /></a
+                    ><a
+                        href="#"
+                        rel="nofollow noopener noreferrer"
+                        class="w-9 h-9 flex items-center justify-center bg-[#1E1E1E] rounded-full text-[#888] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-200 cursor-pointer"
+                    >
+                        <InstagramIcon
+                            stroke="#888"
+                            height="15"
+                            width="15"
+                        /></a
+                    ><a
+                        href="#"
+                        rel="nofollow noopener noreferrer"
+                        class="w-9 h-9 flex items-center justify-center bg-[#1E1E1E] rounded-full text-[#888] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-200 cursor-pointer"
+                        ><WhatsappIcon fill="#888" height="15" width="15" /></a
+                    ><a
+                        href="#"
+                        rel="nofollow noopener noreferrer"
+                        class="w-9 h-9 flex items-center justify-center bg-[#1E1E1E] rounded-full text-[#888] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-200 cursor-pointer"
+                    >
+                        <GoogleIcon />
+                    </a>
+                </div>
+            </div><div>
+                <h4
+                    class="text-[#D4AF37] font-semibold text-sm uppercase tracking-widest mb-5"
+                >
+                    <a href="#inicio">Navegación</a>
+                </h4><ul class="space-y-2">
                     <li>
-                        <a
-                            href="/servicios"
-                            class="hover:text-white transition-colors"
-                            >Servicios</a
+                        <button
+                            class="text-[#888] hover:text-[#D4AF37] text-sm cursor-pointer hover:translate-x-1 inline-block transition-transform"
+                            >Inicio</button
                         >
-                    </li>
-                    <li>
-                        <a
-                            href="#contacto"
-                            class="hover:text-white transition-colors"
-                            >Formulario de contacto</a
+                    </li><li>
+                        <button
+                            class="text-[#888] hover:text-[#D4AF37] text-sm cursor-pointer hover:translate-x-1 inline-block transition-transform"
+                            >Sobre Nosotros</button
                         >
-                    </li>
-                    <li>
-                        <a
-                            href="#soluciones"
-                            class="hover:text-white transition-colors"
-                            >Soluciones</a
+                    </li><li>
+                        <button
+                            class="text-[#888] hover:text-[#D4AF37] text-sm cursor-pointer hover:translate-x-1 inline-block transition-transform"
+                            >Servicios</button
                         >
-                    </li>
-                    <li>
-                        <a
-                            href="#nuestros-trabajos"
-                            class="hover:text-white transition-colors"
-                            >Trabajos</a
+                    </li><li>
+                        <button
+                            class="text-[#888] hover:text-[#D4AF37] text-sm cursor-pointer hover:translate-x-1 inline-block transition-transform"
+                            >Trabajos</button
+                        >
+                    </li><li>
+                        <button
+                            class="text-[#888] hover:text-[#D4AF37] text-sm cursor-pointer hover:translate-x-1 inline-block transition-transform"
+                            >Opiniones</button
+                        >
+                    </li><li>
+                        <button
+                            class="text-[#888] hover:text-[#D4AF37] text-sm cursor-pointer hover:translate-x-1 inline-block transition-transform"
+                            >Contacto</button
                         >
                     </li>
                 </ul>
-            </div>
-
-            <div class="flex flex-col gap-6">
-                <h3
-                    class="text-white text-xs md:text-sm! font-bold tracking-widest uppercase"
+            </div><div>
+                <h4
+                    class="text-[#D4AF37] font-semibold text-sm uppercase tracking-widest mb-5"
                 >
-                    Contacta conmigo
-                </h3>
-                <ul class="flex flex-col gap-5 text-sm md:text-base">
+                    <a href="#servicios">Servicios</a>
+                </h4><ul class="space-y-2">
                     <li>
-                        <a
-                            href="tel:+34674778285"
-                            class="hover:text-white transition-colors"
-                            >+34 674 77 82 85</a
+                        <button
+                            class="text-[#888] hover:text-[#D4AF37] text-sm transition-colors cursor-pointer text-left"
+                            >Micropulido y Acristalado</button
                         >
-                    </li>
-                    <li>
-                        <a
-                            href="mailto:gobestudio29@gmail.com"
-                            class="hover:text-white transition-colors"
-                            >gobestudio29@gmail.com</a
+                    </li><li>
+                        <button
+                            class="text-[#888] hover:text-[#D4AF37] text-sm transition-colors cursor-pointer text-left"
+                            >Pulido y Acristalado</button
                         >
-                    </li>
-                    <li>
-                        <a
-                            href="https://wa.me/674778285"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Enviar mensaje por WhatsApp"
-                            class="hover:text-green-500 transition duration-200"
-                            >WhatsApp</a
+                    </li><li>
+                        <button
+                            class="text-[#888] hover:text-[#D4AF37] text-sm transition-colors cursor-pointer text-left"
+                            >Restauración Integral</button
+                        >
+                    </li><li>
+                        <button
+                            class="text-[#888] hover:text-[#D4AF37] text-sm transition-colors cursor-pointer text-left"
+                            >Pulido de Mármol</button
+                        >
+                    </li><li>
+                        <button
+                            class="text-[#888] hover:text-[#D4AF37] text-sm transition-colors cursor-pointer text-left"
+                            >Pulido de Terrazo</button
+                        >
+                    </li><li>
+                        <button
+                            class="text-[#888] hover:text-[#D4AF37] text-sm transition-colors cursor-pointer text-left"
+                            >Pulido de Hormigón</button
                         >
                     </li>
                 </ul>
-            </div>
-
-            <div class="flex flex-col gap-6">
-                <h3
-                    class="text-white text-xs md:text-sm! font-bold tracking-widest uppercase"
+            </div><div>
+                <h4
+                    class="text-[#D4AF37] font-semibold text-sm uppercase tracking-widest mb-5"
                 >
-                    Legal
-                </h3>
-                <ul class="flex flex-col gap-5 text-sm md:text-base">
-                    <li>
-                        <a
-                            href="/politica-privacidad"
-                            class="hover:text-white transition-colors"
-                            >Política de privacidad</a
+                    <a href="#contacto">Contacto</a>
+                </h4><ul class="space-y-3">
+                    <li class="flex items-start gap-2 text-[#888] text-sm">
+                        <span
+                            class="w-4 h-4 flex items-center justify-center text-[#D4AF37] mt-0.5 shrink-0"
                         >
-                    </li>
-                    <li>
+                            <LocationIcon />
+                        </span>Barrio Santa Clara, Sevilla
+                    </li><li>
                         <a
-                            href="/aviso-legal"
-                            class="hover:text-white transition-colors"
-                            >Aviso legal</a
+                            href="tel:1111111111"
+                            class="flex items-center gap-2 text-[#888] hover:text-[#D4AF37] text-sm transition-colors cursor-pointer"
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37] shrink-0"
+                            >
+                                <PhoneIcon />
+                            </span>1111111111</a
                         >
-                    </li>
-                    <li>
+                    </li><li>
                         <a
-                            href="/accesibilidad"
-                            class="hover:text-white transition-colors"
-                            >Accesibilidad</a
+                            href="mailto:info@pulimentosruiz.es"
+                            class="flex items-center gap-2 text-[#888] hover:text-[#D4AF37] text-sm transition-colors cursor-pointer"
+                            ><span
+                                class="w-4 h-4 flex items-center justify-center text-[#D4AF37] shrink-0"
+                            >
+                                <MailIcon />
+                            </span>info@pulimentosruiz.es</a
                         >
+                    </li><li
+                        class="flex items-center gap-2 text-[#888] text-sm"
+                    >
+                        <span
+                            class="w-4 h-4 flex items-center justify-center text-[#D4AF37] shrink-0"
+                        >
+                            <ClockIcon />
+                        </span>Lun–Sáb 8:00–20:00
                     </li>
                 </ul>
             </div>
-        </div>
-    </div>
-
-    <div
-        class="max-w-7xl mx-auto mt-20 pt-8 border-slate-800/80 text-sm text-slate-500"
-    >
-        <p>&copy; 2026 Gobe Studio. Todos los derechos reservados.</p>
+        </div><div class="h-px bg-[#D4AF37]/20 mb-6"></div><div
+            class="flex flex-col sm:flex-row items-center justify-between gap-3"
+        >
+            <p class="text-[#555] text-xs! text-center sm:text-left">
+                © 2026 Pulimentos Ruiz · Todos los derechos reservados · Sevilla
+            </p><div class="flex items-center gap-4">
+                <a
+                    href="/aviso-legal"
+                    class="text-[#555] hover:text-[#D4AF37] text-xs! transition-colors cursor-pointer"
+                    >Aviso Legal</a
+                ><span class="text-[#333]">|</span><a
+                    href="/politica-privacidad"
+                    class="text-[#555] hover:text-[#D4AF37] text-xs! transition-colors cursor-pointer"
+                    >Política de Privacidad</a
+                >
+            </div>
+        </div><p class="text-center text-[#333] text-xs! mt-4">
+            Diseñado para resultados · Optimizado para Sevilla
+        </p>
     </div>
 </footer>
